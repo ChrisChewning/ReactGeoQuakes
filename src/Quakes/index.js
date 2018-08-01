@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+//gets react and component from react
 
 //this component is a functional component. It is stateless so it doesn't need Component, Constructor, super() b.c it is just rendering stuff on the page.
 
 
-//function Quakes is housing the variable quakes. This variable is set to
+//function Quakes is housing the variable quakes.
 //Quakes is the same name as what is inside default Quakes.
+
+//=============QUESTION 1: Why is it titled Quakes?===================
 
 const Quakes = (props) => {
   console.log(props, ' this is props');
@@ -12,10 +15,6 @@ const Quakes = (props) => {
 
   const quakes = props.quakes.map((quake, i) => {
     return (
-      //quake.properties.title refers to the API data.
-
-      //Keys help React identify which items have changed, are added, or are removed. You have to have a key in react. Keys should be given to the elements inside the array to give the elements a stable identity.
-
       <li key={i}> {quake.properties.title} </li>
     )
   })
@@ -31,6 +30,8 @@ const Quakes = (props) => {
 
   //in your return:
   //the li key={i} needs to refer to the index.
+  //Keys help React identify which items have changed, are added, or are removed. You have to have a key in react. Keys should be given to the elements inside the array to give the elements a stable identity.
+
   //you want to return the {quake.properties.title}, which refers to the title you found in the Google API.
 
 
@@ -39,7 +40,6 @@ const Quakes = (props) => {
   // this.state = {
     //   quakes : [],
     // }
-
 
 
 
