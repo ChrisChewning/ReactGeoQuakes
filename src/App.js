@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Quakes from './Quakes';
+import Quakes from './Quakes'; //this can be a component OR a function.
 import Map from './Map';
 
 class App extends Component {
@@ -36,13 +36,11 @@ constructor() {
     this.getQuakes().then((quakeData) => {
 
       //quakeData is a parameter. could be any name. quakeData is now the state of quakes. So the 'then' part is setting the state to be equal to the data we got. now we can get the data dynamically so if it is updated we can render that update on our page. ex: twitter feed on the initial load.
+      
       this.setState({quakes:quakeData.features}) //pushes state into something new. you are changing quakes, which means you need something to change it into. key:value pair which means quakes has the value of quakeData. it's like prev state is now set to new state (quakeData)
     })
 
   }
-
-
-
 
 
 

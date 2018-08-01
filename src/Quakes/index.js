@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
 
-//functional component is stateless so doesn't need Component, Constructor, super() b.c it is is just showing (rendering) stuff on the page.
+//this component is a functional component. It is stateless so it doesn't need Component, Constructor, super() b.c it is just rendering stuff on the page.
 
 
-//Quakes refers to what?
+//function Quakes is housing the variable quakes. This variable is set to
+//Quakes is the same name as what is inside default Quakes.
+
 const Quakes = (props) => {
   console.log(props, ' this is props');
 
 
-// .map is our only functional part of this. It creates a new array of all our jsx list items. So for here you are creating the variable quakes and setting its value to
-
-//props is eveything you send to it from its parent. 1st parameter is each item of the array its mapping over. 2nd is the index. the li key needs to refer to the index.
-
-// from app.js quakes is where we are putting our API data.
-
-// this.state = {
-  //   quakes : [],
-  // }
-
   const quakes = props.quakes.map((quake, i) => {
     return (
+      //quake.properties.title refers to the API data.
+
+      //Keys help React identify which items have changed, are added, or are removed. You have to have a key in react. Keys should be given to the elements inside the array to give the elements a stable identity.
+
       <li key={i}> {quake.properties.title} </li>
     )
   })
 
+//CONST QUAKES = PROPS.QUAKES.MAP EXPLANATION...
+
+  //props is eveything you send to quakes from its parent.
+  //.quakes is what was the empty array but now has all the data.
+  //.map is basically a way to loop through data. it is our only functional part of this file. it creates a new array of all our jsx list items. It has 2 parameters.
+
+  //1st parameter is each item of the array its mapping over.
+  //2nd parameter is the index.
+
+  //in your return:
+  //the li key={i} needs to refer to the index.
+  //you want to return the {quake.properties.title}, which refers to the title you found in the Google API.
+
+
+  // from app.js quakes is where we are putting our API data.
+
+  // this.state = {
+    //   quakes : [],
+    // }
+
+
+
+
+//return the data you've caught and mapped over. this is the initial empty array in your app.js file.
   return (
     <div>
       <ul>{quakes}</ul>
