@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Quakes from './Quakes'; //this can be a component OR a function.
 import MapContainer from './Map';
-// import QuakeModel from './QuakeWeek';
+import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
 constructor() {
@@ -54,12 +54,12 @@ constructor() {
     console.log(this.state);
     return (
       <div className="app">
-        <div className="mapContainer">   {/* container for map to sit in. */}
+        <div className="mapContainer col-sm-6 col-md-4 col-lg-5">   {/* container for map to sit in. */}
           < MapContainer quake={this.state.quakes}/>   {/* actual map */}
           {/* < Marker /> */}
         </div>
 
-        <div className="quakeContainer">   {/* container for list to sit in. */}
+        <div className="quakeContainer col-sm-6 col-md-4 col-lg-5">   {/* container for list to sit in. */}
           <h1>Earthquakes from the past week: </h1>
           < Quakes quakes={this.state.quakes} /> {/* list of quakes */}
 {/* we are passing the whole quakes data (this.state.quakes) to the Quakes component's. We are giving it a property of quakes. */}
