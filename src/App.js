@@ -29,22 +29,26 @@ constructor() {
     }
   }
 
-  //Call the function.
+  //Call the function with componentDidMount.
   componentDidMount(){
-    // this.getQuakes() calls the getQuakes function. this.getQuakes returns the big object of data. You need this b.c getQuakes is a method in the class you are scoped inside of. so you need to say this to refer to the class first, then getQuakes() b.c it is a method. NEED this b.c
+    // this.getQuakes() calls the getQuakes function. this.getQuakes returns the big object of data. You need this b.c getQuakes is a method in the class you are scoped inside of. so you need to say this to refer to the class first, then getQuakes() b.c it is a method. NEED this b.c it is referring to the App component you are inside of.
 
     this.getQuakes().then((quakeData) => {
 
-      //quakeData is a parameter. could be any name. quakeData is now the state of quakes. So the 'then' part is setting the state to be equal to the data we got. now we can get the data dynamically so if it is updated we can render that update on our page. ex: twitter feed on the initial load.
+      //quakeData is a parameter. could be any name. quakeData is now the state of quakes. So the 'then' part is setting the state to be equal to the data we got. now we can get the data dynamically so if it is updated we can render that update on our page. ex: twitter feed.
 
-      this.setState({quakes:quakeData.features}) //pushes state into something new. you are changing quakes, which means you need something to change it into. key:value pair which means quakes has the value of quakeData. it's like prev state is now set to new state (quakeData)
+
+      //this.setState is saying to put the state of your json data's .features into your empty array.
+
+      this.setState({quakes:quakeData.features}) //pushes state into something new. you are changing quakes, which means you need something to change it into. key:value pair which means quakes has the value of quakeData.features. it's like prev state is now set to new state (quakeData)
     })
 
   }
 
 
 
-//Render on the Page.
+//Render on the Page. YOU ARE ON APP.JS so this is your main page. you want to return both the containers you've been working in as well as this one. Why this one though?
+
   render() {
     console.log(this.state);
     return (

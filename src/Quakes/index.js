@@ -43,7 +43,7 @@ const Quakes = (props) => {
 
 
 
-//return the data you've caught and mapped over. this is the initial empty array in your app.js file.
+//return the data you've caught and mapped over. this is the initial empty array in your app.js file. to return it you have to put it in {}
   return (
     <div>
       <ul>{quakes}</ul>
