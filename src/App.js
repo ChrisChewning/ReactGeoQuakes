@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Quakes from './Quakes'; //this can be a component OR a function.
 import MapContainer from './Map';
+// import QuakeModel from './QuakeWeek';
 
 class App extends Component {
 constructor() {
@@ -13,8 +14,8 @@ constructor() {
 
 //==========MAKE AN ASYNC FUNCTION THAT FETCHES API.========
 
-//getQuakes is a function with the .json method attached to part of it. Need to call the function.
-  getQuakes = async() => { //async b.c all that data needs to load 1st.
+
+  getQuakes = async() => {
     try{ //try always needs a catch(err) b.c it may fail. so return err; return will break it out of continuously looking.
       //this const could be called quake also b.c it is scoped. you need to use a method to get this data into your empty array.
       const quakeData = await fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson")
@@ -53,13 +54,14 @@ constructor() {
     console.log(this.state);
     return (
       <div className="app">
-        <div className="mapContainer">
-          < MapContainer quake={this.state.quakes}/>
+        <div className="mapContainer">   {/* container for map to sit in. */}
+          < MapContainer quake={this.state.quakes}/>   {/* actual map */}
+          {/* < Marker /> */}
         </div>
-        <div className="quakeContainer">
 
+        <div className="quakeContainer">   {/* container for list to sit in. */}
           <h1>Earthquakes from the past week: </h1>
-          < Quakes quakes={this.state.quakes} />
+          < Quakes quakes={this.state.quakes} /> {/* list of quakes */}
 {/* we are passing the whole quakes data (this.state.quakes) to the Quakes component's. We are giving it a property of quakes. */}
         </div>
       </div>
