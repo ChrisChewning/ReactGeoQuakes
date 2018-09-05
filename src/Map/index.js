@@ -9,7 +9,6 @@ import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
     let quakeMarkers = this.props.quake.map( (quake, i) =>
 (
-
       <Marker key = {i}
         title={quake.properties.place}
          name={quake.properties.place}
@@ -21,11 +20,10 @@ import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 )
 )
 
-
     return (
     <div className = "MapContainer">
 
-      <Map className="mapDimensions" google={this.props.google} zoom={2}
+      <Map className="mapDimensions" google={this.props.google} zoom={1}
       initialCenter={{
         lat: 37.78,
         lng: -122.44

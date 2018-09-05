@@ -49,7 +49,7 @@ constructor(props) {
         </div>
 
         <div className="quakeContainer col-sm-12 col-md-5">
-          <h1>Earthquakes from the past week: </h1>
+          <h1>USGS DATA: </h1>
           <Quakes quakes={this.state.quakes}/> {/* list of quakes. passing data to Quakes. */}
 
         </div>
