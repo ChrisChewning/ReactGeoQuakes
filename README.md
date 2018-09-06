@@ -1,12 +1,13 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> React GeoQuakes
+# Project 2
 
-## Introduction
+I chose to put this on my portfolio as project 2 for a couple reasons.
 
-> ***Note:*** *This is a pair programming activity! You must work with a partner on this project! There are many pieces that could trip you up, so having two pairs of eyes and two brains on one set of code will be an important tactic to minimize errors and generate ideas.*
+1. This was the first time really working with React, which I fell in love with. I loved the minimalism you have at times in components, which is also mixed with a lot of possibility.
 
-In this training, we attempt to put together much of the work from this week as well as the last. We'll be using fetch functions to make calls to a third party API.  We will be using live data from the USGS (United States Geological Survey), specifically a data set showing significant earthquakes (M4.0 or greater) from the past week.
+2. I used the React Bootstrap npm package. This was my first time employing mobile-first design.
 
-![](https://media.giphy.com/media/3o7bubiK9vDtxXCOgU/giphy.gif)
+3. Lastly, our cohort hadn't used APIs before this day and I was especially intrigued by the amount of data we had to sift through. Then we had to present it in a visual way, jumping into the world of Google APIs and how they can interact with what you're doing.
+
 
 ## Objectives
 
@@ -16,71 +17,8 @@ Developers will be able to:
 
 ## GeoQuakes
 
-#### Starter code
-
-Get started with the code provided in the `src` folder.
-
 #### Deliverable
 
 Our goal is to:
 - List information about each quake.
 - Display a Google Map with a pin at the epicenter of each quake.
-
-Here's a screenshot of what the final product could look like:
-
-![geoquakes](https://cloud.githubusercontent.com/assets/4304660/25784846/9905f872-3339-11e7-92c5-30775b6bb8f4.png)
-
-If your partner forked the repository originally, you should fork their repository **after you finish working together** so that you'll have your own copy of your work to edit in the future. Link your own repo to your personal website.
-
-
-## Instructions
-
-#### Part 1. Rendering Data
-Take a moment to familiarize yourself with the dataset by opening it in your browser: [http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson).
-
-+ What is the structure of the data?
-    + How many earthquakes does it list?
-    + How would you grab the first earthquake?
-        * How would you grab its title?
-        * How would you grab its geological coordinates:
-            - *latitude*?
-            - *longitude*?
-        * When did it happen?
-            - How many hours ago is that?
-
-Write out the AJAX call that will grab the data and `console.log` the list of earthquakes.
-
-#### Part 2. Add the title data to the page
-
-**Add each *title* to the page**: Loop over your JSON response object, and each `title` to the page using jQuery. Aim to put each title inside the `<div id="info">` section of the page. For example:
-
-```html
-<div id="info">
-  <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p>
-  <p>M 3.1 - 6km SSW of Columbus, Ohio / 77 hours ago </p>
-</div>
-```
-
-
-#### Part 3. Add Google Maps
-- Your next goal is to integrate Google Maps:
-    - For information about [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/tutorial)
-        + Note that you would normally need to sign up for an API key, but we've provided one (See `index.html` line 10)
-    - Please center your map on your city:
-        - Austin:  `{lat: 30.2682, lng: -97.74295}`
-    -  `google-maps-react` is a nice npm package to get started with react and google maps
-    
-
-#### Part 4. Add pins to your map
-Once you've got the map to show up, your next goal is to drop a single pin on your city. This is a sanity check.  
-- Next, can you add only the first earthquake to the map?
-- Can you add pins for *all* the earthquakes to the map?
-- Finally, can you replace the pin with the `earthquake.png` icon?
-
-#### Bonus:
-Extend your template:  
-- Calculate how long ago the quake occurred and add it to the page. E.g. "28 hours ago". Currently, the time that the API returns is in Unix time (seconds since 1/1/1970). That's a nice format for computers, but not a nice format for humans.
-- Parse the title to only include the location, E.g. Instead of "M 4.2 - 1km ESE of Fontana, California", it should just say "Fontana, California."
-- Create a visual indicator of the magnitude of a quake. For instance, maybe a 4.0 is indicated by a "yellow" dot, a 5.0 by an "orange" dot, and anything larger is "red".
-- Create a button that allows us to switch the map from having a 'weekly' view to a 'monthly' view of all quakes. Hint: look through the USGS website to see available endpoints.
-
