@@ -9,32 +9,52 @@ body {
   padding-top: 10em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.mapContainer {
+.quakeContainer, .mapContainer {
   padding-top: 2em;
   padding-left: 2em;
   background-color: #4F759B;
   height: 400px;
+  color: white;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-bottom: 100px;
+  border-radius: 3%;
 }
 
-.quakeContainer {
-  padding-top: 2em;
-  padding-right: 2em;
+.mapDimensions {
+  /* margin-left: -2%; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.header, .footer {
+  width: 100%;
+  text-align: center;
+  left: 0;
   background-color: #4F759B;
   color: white;
-  height: 400px;
 }
 
-.quakeContainer @media only screen and (min-width : 321px) {
-/* margin-top: 3%; */
-background-color: black;
+.header {
+  position:absolute;
+  font-size: 3em;
+  padding: 2%;
+  top: 0;
 }
 
-
-
-.className {
+.footer {
+  position: fixed;
+  bottom:0;
   height: 50px;
-  width: 50px;
+  padding: 1%;
+  margin-bottom: 0%;
+  margin-top: 50px;
 }
